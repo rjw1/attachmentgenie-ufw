@@ -38,7 +38,7 @@ describe 'ufw::allow', :type => :define do
       let(:params) { {:ip => '2a00:1450:4009:80c::1001'} }
       it { should contain_exec('ufw-allow-tcp-from-any-to-2a00:1450:4009:80c::1001-port-all').
         with_command("ufw allow proto tcp from any to 2a00:1450:4009:80c::1001").
-        with_unless("ufw status | grep -qE '^2a00:1450:4009:80c::1001/tcp +ALLOW +Anywhere (v6)$'")
+        with_unless("ufw status | grep -qE '^2a00:1450:4009:80c::1001/tcp +ALLOW +Anywhere \\(v6\\)$'")
       }
     end
     context 'when both $ip and ipaddress_eth0 are specified' do

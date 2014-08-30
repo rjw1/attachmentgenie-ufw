@@ -17,7 +17,7 @@ define ufw::allow($proto='tcp', $port='all', $ip='', $from='any') {
   $from_match = $from ? {
     'any'   => $ipver ? {
       'v4' => 'Anywhere',
-      'v6' => 'Anywhere (v6)',
+      'v6' => 'Anywhere \(v6\)',
     },
     default => $from,
   }
