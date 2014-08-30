@@ -6,7 +6,10 @@ define ufw::reject($proto='tcp', $port='all', $ip='', $from='any') {
       default => $ip,
     }
   } else {
-    $ipadr = 'any'
+    $ipadr = $ip ? {
+      ''      => 'any',
+      default => $ip,
+    }
   }
 
   $from_match = $from ? {
