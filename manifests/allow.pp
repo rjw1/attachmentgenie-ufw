@@ -10,7 +10,7 @@ define ufw::allow($proto='tcp', $port='all', $ip='', $from='any') {
   }
 
   $ipver = $ipadr ? {
-    /::/    => 'v6',
+    /:/    => 'v6',
     default => 'v4',
   }
 
